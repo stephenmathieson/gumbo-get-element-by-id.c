@@ -29,17 +29,27 @@
 // read a file
 static char *
 read_file(const char *file) {
-  FILE *f = fopen(file, "rb");
-  assert(f);
-  fseek(f, 0, SEEK_END);
-  long len = ftell(f);
-  fseek(f, 0, SEEK_SET);
-  char *data = malloc(len + 1);
-  assert(data);
-  fread(data, 1, len, f);
-  fclose(f);
-  return data;
+  FILE *fp = NULL;
+  char *buffer = NULL;
+  long size = 0;
+
+  fp = fopen(file, "r");
+  assert(fp);
+
+  fseek(fp, 0, SEEK_END);
+  size = ftell(fp);
+
+  fseek(fp, 0, SEEK_SET);
+
+  buffer = (char *) calloc(size + 1, sizeof(char));
+  assert(buffer);
+  *buffer = '\0';
+  fread(buffer, sizeof(char), size, fp);
+  fclose(fp);
+
+  return buffer;
 }
+
 
 TEST(simple_matching_ids) {
   char *html = NULL;
