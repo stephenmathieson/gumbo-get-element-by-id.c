@@ -1,6 +1,6 @@
 {
   "name": "gumbo-get-element-by-id",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repo": "stephenmathieson/gumbo-get-element-by-id.c",
   "license": "MIT",
   "src": [
