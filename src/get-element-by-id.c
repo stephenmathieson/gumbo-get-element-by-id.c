@@ -1,4 +1,11 @@
 
+//
+// get-element-by-id.c
+//
+// Copyright (c) 2014 Stephen Mathieson
+// MIT licensed
+//
+
 #include <string.h>
 #include "get-element-by-id.h"
 
