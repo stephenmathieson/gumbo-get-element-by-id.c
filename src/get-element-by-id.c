@@ -7,8 +7,8 @@
  * contained with the `document`.
  */
 
-const GumboNode *
-gumbo_get_element_by_id(const char *id, const GumboNode *document) {
+GumboNode *
+gumbo_get_element_by_id(const char *id, GumboNode *document) {
 
   if (GUMBO_NODE_DOCUMENT != document->type
    && GUMBO_NODE_ELEMENT != document->type) {
@@ -22,9 +22,9 @@ gumbo_get_element_by_id(const char *id, const GumboNode *document) {
   }
 
   // iterate all children
-  const GumboVector *children = &document->v.element.children;
+  GumboVector *children = &document->v.element.children;
   for (unsigned int i = 0; i < children->length; i++) {
-    const GumboNode *node = gumbo_get_element_by_id(id, children->data[i]);
+    GumboNode *node = gumbo_get_element_by_id(id, children->data[i]);
     if (node) return node;
   }
 

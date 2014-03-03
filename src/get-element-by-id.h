@@ -4,7 +4,7 @@
 
 #include "gumbo-parser/gumbo.h"
 
-const GumboNode *
-gumbo_get_element_by_id(const char *, const GumboNode *);
+GumboNode *
+gumbo_get_element_by_id(const char *, GumboNode *);
 
 #endif

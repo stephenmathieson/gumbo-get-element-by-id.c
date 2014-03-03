@@ -55,7 +55,7 @@ TEST(simple_matching_ids) {
   char *html = NULL;
   GumboOutput *output = NULL;
   GumboAttribute *id = NULL;
-  const GumboNode *element = NULL;
+  GumboNode *element = NULL;
 
   html = read_file("./tests/simple.html");
   assert(html);
@@ -99,7 +99,7 @@ TEST(google_homepage) {
   char *html = NULL;
   GumboOutput *output = NULL;
   GumboAttribute *id = NULL;
-  const GumboNode *element = NULL;
+  GumboNode *element = NULL;
 
   // test a much larger document
   html = read_file("./tests/google.html");
